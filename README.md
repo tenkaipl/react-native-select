@@ -12,10 +12,10 @@ A fully customizable select/dropdown for React Native. Inspired by [`react-selec
   <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-4.gif" width="250" />
 </p> -->
 <p align="center" style="white-space: nowrap;">
-  <img src="./examples/assets/gif-1.gif" width="250" />
-  <img src="./examples/assets/gif-2.gif" width="250" />
-  <img src="./examples/assets/gif-3.gif" width="250" />
-  <img src="./examples/assets/gif-4.gif" width="250" />
+  <img src="./examples/assets/gif-1.gif" width="220" />
+  <img src="./examples/assets/gif-2.gif" width="220" />
+  <img src="./examples/assets/gif-3.gif" width="220" />
+  <img src="./examples/assets/gif-4.gif" width="220" />
 </p>
 
 <!-- <p align="center">
