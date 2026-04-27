@@ -4,15 +4,20 @@
 ![npm](https://img.shields.io/npm/dm/@tenkai/react-native-select)
 
 A fully customizable select/dropdown for React Native. Inspired by [`react-select`](https://react-select.com/), built for native environments.
-<table>
-  <tr>
-    <td><img src="examples/assets/gif-1.gif" width="250"/></td>
-    <td><img src="examples/assets/gif-2.gif" width="250"/></td>
-    <td><img src="examples/assets/gif-3.gif" width="250"/></td>
-    <td><img src="examples/assets/gif-4.gif" width="250"/></td>
-  </tr>
-</table>
-<!-- <div style="overflow-x: auto;"> -->
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-1.gif" width="250" alt="Example 1"/>
+  <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-2.gif" width="250" alt="Example 2"/>
+  <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-3.gif" width="250" alt="Example 3"/>
+  <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-4.gif" width="250" alt="Example 4"/>
+</p>
+<p align="center">
+  <img src="./examples/assets/gif-1.gif" width="250" alt="Example 1"/>
+  <img src="./examples/assets/gif-2.gif" width="250" alt="Example 2"/>
+  <img src="./examples/assets/gif-3.gif" width="250" alt="Example 3"/>
+  <img src="./examples/assets/gif-4.gif" width="250" alt="Example 4"/>
+</p>
+<!-- <div style="overflow-x: auto;">
   <table style="border-collapse: separate; border-spacing: 1px 0;">
     <tr>
       <td style="padding: 0;"><img src="./examples/assets/gif-1.gif" width="250" alt="Example 1" /></td>
@@ -21,8 +26,7 @@ A fully customizable select/dropdown for React Native. Inspired by [`react-selec
       <td style="padding: 0;"><img src="./examples/assets/gif-4.gif" width="250" alt="Example 4" /></td>
     </tr>
   </table>
-<!-- </div> -->
-
+</div> -->
 <!-- <table>
   <tr>
     <td><img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-1.gif" width="250"/></td>
