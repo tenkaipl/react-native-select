@@ -1,0 +1,43 @@
+{
+  "name": "@tenkai/react-native-select",
+  "version": "0.1.0",
+  "description": "Customizable select/dropdown for React Native",
+  "main": "src/index.js",
+  "files": [
+    "src",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "react-native",
+    "expo",
+    "react native select",
+    "react-native-select",
+    "react native dropdown",
+    "react-native-dropdown",
+    "custom select",
+    "custom dropdown",
+    "headless ui",
+    "react native picker alternative",
+    "react native form",
+    "react native input",
+    "react native autocomplete"
+  ],
+  "author": "Tenkai",
+  "license": "MIT",
+  "homepage": "https://github.com/tenkaipl/react-native-select#readme",
+  "bugs": {
+    "url": "https://github.com/tenkaipl/react-native-select/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tenkaipl/react-native-select"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-native": ">=0.70",
+    "react-native-safe-area-context": ">=4",
+    "@expo/vector-icons": ">=13"
+  }
+}
