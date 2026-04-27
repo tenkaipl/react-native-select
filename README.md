@@ -1,15 +1,25 @@
 # React Native Select
 
+![npm](https://img.shields.io/npm/v/@tenkai/react-native-select) 
+![npm](https://img.shields.io/npm/dm/@tenkai/react-native-select)
+
 A fully customizable select/dropdown for React Native. Inspired by [`react-select`](https://react-select.com/), built for native environments.
 
-<div style="overflow-x: auto; white-space: nowrap;">
+<div style="display: flex; flex-wrap: nowrap; gap: 1px; overflow-x: auto;">
+  <img src="./examples/assets/gif-1.gif" width="250" style="flex-shrink: 0; max-width: none;" alt="Example 1" />
+  <img src="./examples/assets/gif-2.gif" width="250" style="flex-shrink: 0; max-width: none;" alt="Example 2" />
+  <img src="./examples/assets/gif-3.gif" width="250" style="flex-shrink: 0; max-width: none;" alt="Example 3" />
+  <img src="./examples/assets/gif-4.gif" width="250" style="flex-shrink: 0; max-width: none;" alt="Example 4" />
+</div>
+
+<!-- <div style="overflow-x: auto; white-space: nowrap;">
   <div style="display: flex; gap: 1px;">
     <img src="./examples/assets/gif-1.gif" width="250" alt="Example 1"/>
     <img src="./examples/assets/gif-2.gif" width="250" alt="Example 2"/>
     <img src="./examples/assets/gif-3.gif" width="250" alt="Example 3"/>
     <img src="./examples/assets/gif-4.gif" width="250" alt="Example 4"/>
   </div>
-</div>
+</div> -->
 
 <!-- <div style="overflow-x: auto; white-space: nowrap;">
   <div style="display: flex; gap: 1px;">
