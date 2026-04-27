@@ -5,19 +5,6 @@
 
 A fully customizable select/dropdown for React Native. Inspired by [`react-select`](https://react-select.com/), built for native environments.
 
-<!-- <p align="center" style="white-space: nowrap;">
-  <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-1.gif" width="250" />
-  <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-2.gif" width="250" />
-  <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-3.gif" width="250" />
-  <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-4.gif" width="250" />
-</p> -->
-<p align="center" style="white-space: nowrap;">
-  <img src="./examples/assets/gif-1.gif" width="220" />
-  <img src="./examples/assets/gif-2.gif" width="220" />
-  <img src="./examples/assets/gif-3.gif" width="220" />
-  <img src="./examples/assets/gif-4.gif" width="220" />
-</p>
-
 <!-- <p align="center">
   <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-1.gif" width="250" alt="Example 1"/>
   <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-2.gif" width="250" alt="Example 2"/>
@@ -25,10 +12,10 @@ A fully customizable select/dropdown for React Native. Inspired by [`react-selec
   <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-4.gif" width="250" alt="Example 4"/>
 </p> -->
 <p align="center">
-  <img src="./examples/assets/gif-1.gif" width="250" alt="Example 1"/>
-  <img src="./examples/assets/gif-2.gif" width="250" alt="Example 2"/>
-  <img src="./examples/assets/gif-3.gif" width="250" alt="Example 3"/>
-  <img src="./examples/assets/gif-4.gif" width="250" alt="Example 4"/>
+  <img src="./examples/assets/gif-1.gif" width="200" alt="Example 1"/>
+  <img src="./examples/assets/gif-2.gif" width="200" alt="Example 2"/>
+  <img src="./examples/assets/gif-3.gif" width="200" alt="Example 3"/>
+  <img src="./examples/assets/gif-4.gif" width="200" alt="Example 4"/>
 </p>
 <!-- <div style="overflow-x: auto;">
   <table style="border-collapse: separate; border-spacing: 1px 0;">
