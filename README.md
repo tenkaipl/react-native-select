@@ -43,6 +43,17 @@ A fully customizable select/dropdown for React Native. Inspired by [`react-selec
   </tr>
 </table>
 
+<div style="overflow-x: auto;">
+  <table style="border-collapse: separate; border-spacing: 1px 0;">
+    <tr>
+      <td style="padding: 0;"><img src="./examples/assets/gif-1.gif" width="250" alt="Example 1" /></td>
+      <td style="padding: 0;"><img src="./examples/assets/gif-2.gif" width="250" alt="Example 2" /></td>
+      <td style="padding: 0;"><img src="./examples/assets/gif-3.gif" width="250" alt="Example 3" /></td>
+      <td style="padding: 0;"><img src="./examples/assets/gif-4.gif" width="250" alt="Example 4" /></td>
+    </tr>
+  </table>
+</div>
+
 <!-- <table>
   <tr>
     <td><img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-1.gif" width="250"/></td>
