@@ -6,10 +6,10 @@
 A fully customizable select/dropdown for React Native. Inspired by [`react-select`](https://react-select.com/), built for native environments.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-1.gif" width="250" alt="Example 1"/>
-  <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-2.gif" width="250" alt="Example 2"/>
-  <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-3.gif" width="250" alt="Example 3"/>
-  <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-4.gif" width="250" alt="Example 4"/>
+  <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-1.gif" width="200" alt="Example 1"/>
+  <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-2.gif" width="200" alt="Example 2"/>
+  <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-3.gif" width="200" alt="Example 3"/>
+  <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-4.gif" width="200" alt="Example 4"/>
 </p>
 <!-- <p align="center">
   <img src="./examples/assets/gif-1.gif" width="200" alt="Example 1"/>
