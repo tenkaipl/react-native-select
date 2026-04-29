@@ -4,6 +4,21 @@
 [![npm downloads](https://img.shields.io/npm/dm/@tenkaipl/react-native-select.svg)](https://www.npmjs.com/package/@tenkaipl/react-native-select)
 [![license](https://img.shields.io/npm/l/@tenkaipl/react-native-select.svg)](https://www.npmjs.com/package/@tenkaipl/react-native-select)
 
+## Why?
+
+Building a select in React Native looks simple — until it meets a real app. Small screens, layered rendering contexts, and platform quirks turn a basic dropdown into a source of edge-case bugs that are painful to track down.
+
+`@tenkaipl/react-native-select` was built to handle these contexts correctly out of the box:
+
+- **Plain Views** — opens and positions correctly regardless of where the component sits in the layout
+- **ScrollView / FlatList** — no conflicts with gesture or tap interception (see [ScrollView compatibility](#-scrollview-compatibility) below)
+- **Modal** — proper z-index handling; the list never hides behind other UI layers
+- **On-screen keyboard** — the dropdown doesn't collide with an open keyboard
+- **Landscape orientation** — adapts gracefully to limited vertical space
+- **SafeArea** — respects safe areas on notched and edge-to-edge devices
+
+## About
+
 A fully customizable select/dropdown for React Native. Inspired by [`react-select`](https://react-select.com/), built for native environments.
 
 <p align="center">
@@ -83,9 +98,9 @@ export default function App() {
 
 ---
 
-## ⚠️ ScrollView compatibility
+## ScrollView compatibility
 
-If you use this component inside a `ScrollView`, `FlatList`, or `SectionList`, add `keyboardShouldPersistTaps="handled"` to the parent:
+⚠️ This is important if you plan to use this component inside a `ScrollView`, `FlatList`, or `SectionList`: please add `keyboardShouldPersistTaps="handled"` to the parent:
 
 ```jsx
 <ScrollView keyboardShouldPersistTaps="handled">
