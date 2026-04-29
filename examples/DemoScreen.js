@@ -3,7 +3,7 @@ import { View, Text, ScrollView, StyleSheet, Pressable } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Icon from '@expo/vector-icons';
 import { CATEGORY_OPTIONS, CITY_OPTIONS, FRUITS_AND_VEGGIES_FLATTENED, FRUITS_AND_VEGGIES_NESTED, LOREM_IPSUM_OPTIONS, MIXED_OPTIONS, MONTH_OPTIONS, STATUS_OPTIONS } from '../components/TestData';
-import ReactNativeSelect, { flattenGroupedOptions } from '@tenkai-pl/react-native-select';
+import ReactNativeSelect, { flattenGroupedOptions } from '@tenkaipl/react-native-select';
 
 export default function DemoScreen() {
   const insets = useSafeAreaInsets();
