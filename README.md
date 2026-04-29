@@ -1,7 +1,8 @@
 # React Native Select
 
-![npm](https://img.shields.io/npm/v/@tenkaipl/react-native-select) 
-![npm](https://img.shields.io/npm/dm/@tenkaipl/react-native-select)
+[![npm version](https://img.shields.io/npm/v/@tenkaipl/react-native-select.svg)](https://www.npmjs.com/package/@tenkaipl/react-native-select)
+[![npm downloads](https://img.shields.io/npm/dm/@tenkaipl/react-native-select.svg)](https://www.npmjs.com/package/@tenkaipl/react-native-select)
+[![license](https://img.shields.io/npm/l/@tenkaipl/react-native-select.svg)](https://www.npmjs.com/package/@tenkaipl/react-native-select)
 
 A fully customizable select/dropdown for React Native. Inspired by [`react-select`](https://react-select.com/), built for native environments.
 
