@@ -11,7 +11,7 @@ Building a select in React Native looks simple — until it meets a real app. Sm
 `@tenkaipl/react-native-select` was built to handle these contexts correctly out of the box:
 
 - **Plain Views** — opens and positions correctly regardless of where the component sits in the layout
-- **ScrollView / FlatList** — no conflicts with gesture or tap interception (see [ScrollView compatibility](#-scrollview-compatibility) below)
+- **ScrollView / FlatList** — no conflicts with gesture or tap interception (see [ScrollView compatibility](#scrollview-compatibility) below)
 - **Modal** — proper z-index handling; the list never hides behind other UI layers
 - **On-screen keyboard** — the dropdown doesn't collide with an open keyboard
 - **Landscape orientation** — adapts gracefully to limited vertical space
@@ -77,7 +77,7 @@ export default function App() {
 ## Installation
 
 ```bash
-npm install @tenkaipl/react-native-select @expo/vector-icons react-native-safe-area-context
+npm install @tenkaipl/react-native-select react-native-safe-area-context @expo/vector-icons 
 ```
 
 ### SafeAreaProvider (required)
@@ -257,6 +257,7 @@ const OPTIONS = flattenGroupedOptions(GROUPED_DATA);
 
 | Key | Default | Description |
 |-----|---------|-------------|
+| `triggerMinWidth` | `180` | Minimum width of the trigger. |
 | `itemHeight` | `50` | Height of each row (trigger, option rows, search bar). Clamped between `35`–`70`. |
 | `maxListWidth` | `600` | Maximum width of the dropdown. |
 | `maxListHeight` | `undefined` | Maximum height of the dropdown. |

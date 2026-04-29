@@ -13,8 +13,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Icon from '@expo/vector-icons';
 
 // Browsers’ default :focus ring on web; RN Web may not map a single `outline: 'none'` to all cases.
-const webNoFocusRing =
-  Platform.OS === 'web' ? { outlineStyle: 'none', outlineWidth: 0 } : null;
+const webNoFocusRing = Platform.OS === 'web' ? { outlineStyle: 'none', outlineWidth: 0 } : {};
 
 // Helper for nested API
 export function flattenGroupedOptions(groups) {
@@ -61,6 +60,7 @@ export const COLOR_PRESETS = {
 
 // Default sizes — overridden by prop `sizes` (merge with below).
 export const DEFAULT_SIZES = {
+  triggerMinWidth: 180,
   itemHeight: 50,
   maxListWidth: 600,
   maxListHeight: undefined,
@@ -513,6 +513,7 @@ const staticStyles = StyleSheet.create({
 function buildStyles({ colors, sizes, typography, borderColor }) {
   return StyleSheet.create({
     selectStyle: {
+      minWidth: sizes.triggerMinWidth,
       borderRadius: sizes.borderRadius,
       backgroundColor: colors.primary,
       borderWidth: sizes.borderWidth,
