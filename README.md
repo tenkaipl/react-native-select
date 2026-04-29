@@ -1,7 +1,7 @@
 # React Native Select
 
-![npm](https://img.shields.io/npm/v/@tenkai/react-native-select) 
-![npm](https://img.shields.io/npm/dm/@tenkai/react-native-select)
+![npm](https://img.shields.io/npm/v/@tenkai-pl/react-native-select) 
+![npm](https://img.shields.io/npm/dm/@tenkai-pl/react-native-select)
 
 A fully customizable select/dropdown for React Native. Inspired by [`react-select`](https://react-select.com/), built for native environments.
 
@@ -32,7 +32,7 @@ A fully customizable select/dropdown for React Native. Inspired by [`react-selec
 
 ```jsx
 import React, { useState } from 'react';
-import ReactNativeSelect from '@tenkai/react-native-select';
+import ReactNativeSelect from '@tenkai-pl/react-native-select';
 
 const OPTIONS = [
   { value: 'apple',  label: 'Apple' },
@@ -61,7 +61,7 @@ export default function App() {
 ## Installation
 
 ```bash
-npm install @tenkai/react-native-select @expo/vector-icons react-native-safe-area-context
+npm install @tenkai-pl/react-native-select @expo/vector-icons react-native-safe-area-context
 ```
 
 ### SafeAreaProvider (required)
@@ -122,7 +122,7 @@ During search, group headers are shown only when at least one of their options m
 If your data comes from an API in nested format, use the built-in helper:
 
 ```jsx
-import ReactNativeSelect, { flattenGroupedOptions } from '@tenkai/react-native-select';
+import ReactNativeSelect, { flattenGroupedOptions } from '@tenkai-pl/react-native-select';
 
 const GROUPED_DATA = [
   {
