@@ -346,4 +346,4 @@ MIT — see [LICENSE](./LICENSE).
 
 ---
 
-Built by [Tenkai](https://www.tenkai.pl)
+Built by [Tenkai Software House](https://www.tenkai.pl) 🇵🇱
