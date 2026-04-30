@@ -2,7 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.1.0] - 2025
+## [0.1.1] - 2026-04-30
+
+### Added
+- `triggerMinWidth` prop for better control over trigger sizing
+
+### Fixed
+- Removed default focus outline on web (`outlineStyle: 'none'`) for consistent appearance
+
+## [0.1.0] - 2026-04-29
 
 ### Added
 

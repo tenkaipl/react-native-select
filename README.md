@@ -21,19 +21,21 @@ Building a select in React Native looks simple — until it meets a real app. Sm
 
 A fully customizable select/dropdown for React Native. Inspired by [`react-select`](https://react-select.com/), built for native environments.
 
-<p align="center">
+<table>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-1.gif" width="240" /></td>
+    <td><img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-2.gif" width="240" /></td>
+    <td><img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-3.gif" width="240" /></td>
+    <td><img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-4.gif" width="240" /></td>
+  </tr>
+</table>
+
+<!-- <p align="center">
   <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-1.gif" width="200" alt="Example 1"/>
   <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-2.gif" width="200" alt="Example 2"/>
   <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-3.gif" width="200" alt="Example 3"/>
   <img src="https://raw.githubusercontent.com/tenkaipl/react-native-select/main/examples/assets/gif-4.gif" width="200" alt="Example 4"/>
-</p>
-<!-- <p align="center">
-  <img src="./examples/assets/gif-1.gif" width="200" alt="Example 1"/>
-  <img src="./examples/assets/gif-2.gif" width="200" alt="Example 2"/>
-  <img src="./examples/assets/gif-3.gif" width="200" alt="Example 3"/>
-  <img src="./examples/assets/gif-4.gif" width="200" alt="Example 4"/>
 </p> -->
-
 
 ✨ Single select · search · clear · groups · disabled · dark theme  
 🎨 Custom colors, sizes, typography, icons, trigger, group header  

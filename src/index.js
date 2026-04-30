@@ -10,7 +10,7 @@ import {
   Platform,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import * as Icon from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
 // Browsers’ default :focus ring on web; RN Web may not map a single `outline: 'none'` to all cases.
 const webNoFocusRing = Platform.OS === 'web' ? { outlineStyle: 'none', outlineWidth: 0 } : {};
@@ -100,7 +100,7 @@ function IconButton({ iconName, iconSize, onPress, color, disabled, pressedOpaci
         { opacity: pressed ? pressedOpacity : 1 },
       ]}
     >
-      <Icon.Ionicons name={iconName} size={iconSize} color={color} />
+      <Ionicons name={iconName} size={iconSize} color={color} />
     </Pressable>
   );
 }

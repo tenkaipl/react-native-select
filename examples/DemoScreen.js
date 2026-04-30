@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, StyleSheet, Pressable } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import * as Icon from '@expo/vector-icons';
-import { CATEGORY_OPTIONS, CITY_OPTIONS, FRUITS_AND_VEGGIES_FLATTENED, FRUITS_AND_VEGGIES_NESTED, LOREM_IPSUM_OPTIONS, MIXED_OPTIONS, MONTH_OPTIONS, STATUS_OPTIONS } from '../components/TestData';
+import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Ionicons } from '@expo/vector-icons';
 import ReactNativeSelect, { flattenGroupedOptions } from '@tenkaipl/react-native-select';
+import { CATEGORY_OPTIONS, CITY_OPTIONS, FRUITS_AND_VEGGIES_FLATTENED, FRUITS_AND_VEGGIES_NESTED, LOREM_IPSUM_OPTIONS, MIXED_OPTIONS, MONTH_OPTIONS, STATUS_OPTIONS } from '../components/TestData';
 
-export default function DemoScreen() {
+export default function App() {
+  return (
+    <SafeAreaProvider>
+      <AppContent />
+    </SafeAreaProvider>
+  );
+}
+
+function AppContent() {
   const insets = useSafeAreaInsets();
   const [page, setPage] = useState(1);
 
@@ -13,11 +21,9 @@ export default function DemoScreen() {
   const [v1, setV1] = useState(null);
   const [v2, setV2] = useState(null);
   const [v3, setV3] = useState(null);
-  const [month, setMonth] = useState(null);
   const [v4, setV4] = useState(null);
   const [v5, setV5] = useState('locked');
   const [v6, setV6] = useState(null);
-  const [v7, setV7] = useState(null);
 
   //* PAGE 2
   const [v10, setV10] = useState(null);
@@ -32,7 +38,6 @@ export default function DemoScreen() {
   const [v22, setV22] = useState(null);
   const [v23, setV23] = useState(null);
   const [v24, setV24] = useState(null);
-  const [v25, setV25] = useState(null);
 
   //* PAGE 4
   const [v30, setV30] = useState(null);
@@ -43,704 +48,688 @@ export default function DemoScreen() {
   const [v35, setV35] = useState(null);
 
   return (
-    <ScrollView
-      style={styles.screen}
-      contentContainerStyle={[styles.scrollContent, { paddingTop: insets.top, paddingBottom: insets.bottom, },]}
-      keyboardShouldPersistTaps="handled"
-      showsVerticalScrollIndicator={false}
-    >
-      <View style={{ height: 15 }}></View>
+    <SafeAreaProvider>
+      <ScrollView
+        style={styles.screen}
+        contentContainerStyle={[styles.scrollContent, { paddingTop: insets.top, paddingBottom: insets.bottom, },]}
+        keyboardShouldPersistTaps="handled"
+        showsVerticalScrollIndicator={false}
+      >
+        <View style={{ height: 15 }}></View>
 
-      <Text style={styles.headline}>React Native Select</Text>
+        <Text style={styles.headline}>React Native Select</Text>
 
-      <View style={{ height: 10 }} />
+        <View style={{ height: 10 }} />
 
-      <Text style={styles.lead}>
-        Demo of React Native Select component.
-      </Text>
-      <Text style={styles.lead}>
-        Built by <Text style={{ fontWeight: 'bold' }}>Tenkai</Text>
-      </Text>
+        <Text style={styles.lead}>
+          Demo of React Native Select component.
+        </Text>
+        <Text style={styles.lead}>
+          Built by <Text style={{ fontWeight: 'bold' }}>Tenkai</Text>
+        </Text>
 
-      {/* <View style={{ height: 15 }}></View> */}
-      <View style={{ height: 10 }} />
-      <View style={{ flexDirection: 'row', justifyContent: 'flex-start', gap: 10 }}>
-        <Pressable style={[styles.badge, page === 1 && styles.badgeActive]} onPress={() => setPage(1)}>
-          <Text style={[styles.lead, page === 1 && styles.badgeTextActive]}>Default</Text>
-        </Pressable>
-        <Pressable style={[styles.badge, page === 2 && styles.badgeActive]} onPress={() => setPage(2)}>
-          <Text style={[styles.lead, page === 2 && styles.badgeTextActive]}>Custom</Text>
-        </Pressable>
-        <Pressable style={[styles.badge, page === 3 && styles.badgeActive]} onPress={() => setPage(3)}>
-          <Text style={[styles.lead, page === 3 && styles.badgeTextActive]}>Special</Text>
-        </Pressable>
-        <Pressable style={[styles.badge, page === 4 && styles.badgeActive]} onPress={() => setPage(4)}>
-          <Text style={[styles.lead, page === 4 && styles.badgeTextActive]}>Trigger</Text>
-        </Pressable>
-      </View>
-      <View style={{ height: 10 }} />
+        <View style={{ height: 10 }} />
+        <View style={{ flexDirection: 'row', justifyContent: 'flex-start', gap: 10 }}>
+          <Pressable style={[styles.badge, page === 1 && styles.badgeActive]} onPress={() => setPage(1)}>
+            <Text style={[styles.lead, page === 1 && styles.badgeTextActive]}>Default</Text>
+          </Pressable>
+          <Pressable style={[styles.badge, page === 2 && styles.badgeActive]} onPress={() => setPage(2)}>
+            <Text style={[styles.lead, page === 2 && styles.badgeTextActive]}>Custom</Text>
+          </Pressable>
+          <Pressable style={[styles.badge, page === 3 && styles.badgeActive]} onPress={() => setPage(3)}>
+            <Text style={[styles.lead, page === 3 && styles.badgeTextActive]}>Special</Text>
+          </Pressable>
+          <Pressable style={[styles.badge, page === 4 && styles.badgeActive]} onPress={() => setPage(4)}>
+            <Text style={[styles.lead, page === 4 && styles.badgeTextActive]}>Trigger</Text>
+          </Pressable>
+        </View>
+        <View style={{ height: 10 }} />
 
+        <View style={[styles.card, page === 2 && styles.cardTransparent, page === 3 && styles.cardTransparent, page === 4 && styles.cardTransparent]}>
 
-
-      <View style={[styles.card, page === 2 && styles.cardTransparent, page === 3 && styles.cardTransparent, page === 4 && styles.cardTransparent]}>
-
-        {page === 1 && (
-          <>
-            <Text style={styles.fieldLabel}>Select</Text>
-            <ReactNativeSelect
-              options={CITY_OPTIONS}
-              value={v1}
-              onChange={(item) => setV1(item.value)}
-              placeholder="Select city…"
-            />
-
-            <View style={{ height: 25 }}></View>
-
-            <Text style={styles.fieldLabel}>Clearable</Text>
-            <ReactNativeSelect
-              options={MIXED_OPTIONS}
-              value={v2}
-              onChange={(item) => setV2(item.value)}
-              placeholder="Select…"
-              theme="light"
-              clearable
-              animationType="slide"
-            />
-
-            <View style={{ height: 25 }}></View>
-
-            <Text style={styles.fieldLabel}>Searchable</Text>
-            <ReactNativeSelect
-              options={MONTH_OPTIONS}
-              // value={v3}
-              // onChange={(item) => setV3(item.value)}
-              value={month}
-              onChange={(item) => setMonth(item.value)}
-              placeholder="Select…"
-              searchable
-              clearable
-            // sizes={{
-            //   maxListWidth: 600,
-            //   maxListHeight: 600
-            // }}
-            />
-
-            <View style={{ height: 25 }}></View>
-
-            <Text style={styles.fieldLabel}>Grouped</Text>
-            <ReactNativeSelect
-              options={FRUITS_AND_VEGGIES_FLATTENED}
-              value={v4}
-              onChange={(item) => setV4(item.value)}
-              placeholder="Select…"
-              theme="light"
-              searchable
-              autoFocus={false}
-              clearable
-              animationType="none"
-            />
-
-            {/* <View style={{ height: 25 }}></View>
-
-            <Text style={styles.fieldLabel}>Emoji</Text>
-            <ReactNativeSelect
-              options={STATUS_OPTIONS}
-              value={v5}
-              onChange={(item) => setV5(item.value)}
-              placeholder="Select…"
-              theme="light"
-              searchable
-              clearable
-            /> */}
-
-            <View style={{ height: 25 }}></View>
-
-            <Text style={styles.fieldLabel}>Disabled</Text>
-            <ReactNativeSelect
-              options={STATUS_OPTIONS}
-              value={v6}
-              onChange={(item) => setV6(item.value)}
-              placeholder="Select is disabled…"
-              theme="light"
-              searchable
-              clearable
-              disabled={true}
-            />
-
-            <View style={{ height: 25 }}></View>
-
-            <Text style={styles.fieldLabel}>Dark theme</Text>
-            <ReactNativeSelect
-              options={CATEGORY_OPTIONS}
-              value={v7}
-              onChange={(item) => setV7(item.value)}
-              placeholder="Select category…"
-              theme="dark"
-              clearable
-              searchable
-            />
-          </>
-        )}
-
-        {page === 2 && (
-          <>
-            {/* Rose */}
-            <View style={[styles.variant, { backgroundColor: THEMES.rose.bg }]}>
-              <Text style={[styles.variantTitle, { color: THEMES.rose.titleColor }]}>Rose</Text>
-              <View style={{ height: 12 }} />
+          {page === 1 && (
+            <>
+              <Text style={styles.fieldLabel}>Select</Text>
               <ReactNativeSelect
-                options={LOREM_IPSUM_OPTIONS}
-                value={v10}
-                onChange={(item) => setV10(item.value)}
+                options={CITY_OPTIONS}
+                value={v1}
+                onChange={(item) => setV1(item.value)}
+                placeholder="Select city…"
+              />
+
+              <View style={{ height: 25 }}></View>
+
+              <Text style={styles.fieldLabel}>Clearable</Text>
+              <ReactNativeSelect
+                options={MIXED_OPTIONS}
+                value={v2}
+                onChange={(item) => setV2(item.value)}
+                placeholder="Select…"
+                theme="light"
+                clearable
+                animationType="slide"
+              />
+
+              <View style={{ height: 25 }}></View>
+
+              <Text style={styles.fieldLabel}>Searchable</Text>
+              <ReactNativeSelect
+                options={MONTH_OPTIONS}
+                value={v3}
+                onChange={(item) => setV3(item.value)}
                 placeholder="Select…"
                 searchable
                 clearable
-                colors={THEMES.rose.selectColors}
-                sizes={THEMES.rose.sizes}
+                sizes={{
+                  maxListWidth: 800,
+                  maxListHeight: 800
+                }}
               />
-            </View>
 
-            {/* Ambient */}
-            <View style={[styles.variant, { backgroundColor: THEMES.ambient.bg }]}>
-              <Text style={[styles.variantTitle, { color: THEMES.ambient.titleColor }]}>Ambient</Text>
-              <View style={{ height: 12 }} />
+              <View style={{ height: 25 }}></View>
+
+              <Text style={styles.fieldLabel}>Grouped</Text>
               <ReactNativeSelect
-                options={LOREM_IPSUM_OPTIONS}
-                value={v11}
-                onChange={(item) => setV11(item.value)}
+                options={FRUITS_AND_VEGGIES_FLATTENED}
+                value={v4}
+                onChange={(item) => setV4(item.value)}
                 placeholder="Select…"
+                theme="light"
+                searchable
+                autoFocus={false}
+                clearable
+                animationType="none"
+              />
+
+              <View style={{ height: 25 }}></View>
+
+              <Text style={styles.fieldLabel}>Disabled</Text>
+              <ReactNativeSelect
+                options={STATUS_OPTIONS}
+                value={v5}
+                onChange={(item) => setV5(item.value)}
+                placeholder="Select is disabled…"
+                theme="light"
                 searchable
                 clearable
-                colors={THEMES.ambient.selectColors}
-                sizes={THEMES.ambient.sizes}
+                disabled={true}
               />
-            </View>
 
-            {/* Emerald */}
-            <View style={[styles.variant, { backgroundColor: THEMES.emerald.bg }]}>
-              <Text style={[styles.variantTitle, { color: THEMES.emerald.titleColor }]}>Emerald</Text>
-              <View style={{ height: 12 }} />
+              <View style={{ height: 25 }}></View>
+
+              <Text style={styles.fieldLabel}>Dark theme</Text>
               <ReactNativeSelect
-                options={LOREM_IPSUM_OPTIONS}
-                value={v12}
-                onChange={(item) => setV12(item.value)}
-                placeholder="Select…"
-                searchable
+                options={CATEGORY_OPTIONS}
+                value={v6}
+                onChange={(item) => setV6(item.value)}
+                placeholder="Select category…"
+                theme="dark"
                 clearable
-                colors={THEMES.emerald.selectColors}
-                sizes={THEMES.emerald.sizes}
-              />
-            </View>
-
-            {/* Ocean */}
-            <View style={[styles.variant, { backgroundColor: THEMES.ocean.bg }]}>
-              <Text style={[styles.variantTitle, { color: THEMES.ocean.titleColor }]}>Ocean</Text>
-              <View style={{ height: 12 }} />
-              <ReactNativeSelect
-                options={LOREM_IPSUM_OPTIONS}
-                value={v13}
-                onChange={(item) => setV13(item.value)}
-                placeholder="Select…"
                 searchable
-                clearable
-                colors={THEMES.ocean.selectColors}
-                sizes={THEMES.ocean.sizes}
               />
-            </View>
+            </>
+          )}
 
-            {/* Midnight */}
-            <View style={[styles.variant, { backgroundColor: THEMES.midnight.bg }]}>
-              <Text style={[styles.variantTitle, { color: THEMES.midnight.titleColor }]}>Midnight</Text>
-              <View style={{ height: 12 }} />
-              <ReactNativeSelect
-                options={LOREM_IPSUM_OPTIONS}
-                value={v14}
-                onChange={(item) => setV14(item.value)}
-                placeholder="Select…"
-                searchable
-                clearable
-                colors={THEMES.midnight.selectColors}
-                sizes={THEMES.midnight.sizes}
-              />
-            </View>
-          </>
-        )}
+          {page === 2 && (
+            <>
+              {/* Rose */}
+              <View style={[styles.variant, { backgroundColor: THEMES.rose.bg }]}>
+                <Text style={[styles.variantTitle, { color: THEMES.rose.titleColor }]}>Rose</Text>
+                <View style={{ height: 12 }} />
+                <ReactNativeSelect
+                  options={LOREM_IPSUM_OPTIONS}
+                  value={v10}
+                  onChange={(item) => setV10(item.value)}
+                  placeholder="Select…"
+                  searchable
+                  clearable
+                  colors={THEMES.rose.selectColors}
+                  sizes={THEMES.rose.sizes}
+                />
+              </View>
 
-        {page === 3 && (
-          <>
-            {/* Seaside */}
-            <View style={[styles.variant, { backgroundColor: THEMES.seaside.bg }]}>
-              <Text style={[styles.variantTitle, { color: THEMES.seaside.titleColor }]}>Seaside</Text>
-              <View style={{ height: 12 }} />
-              <ReactNativeSelect
-                options={LOREM_IPSUM_OPTIONS}
-                value={v20}
-                onChange={(item) => setV20(item.value)}
-                placeholder="Choose a sea breeze…"
-                searchable
-                clearable
-                colors={THEMES.seaside.selectColors}
-                sizes={THEMES.seaside.sizes}
-                typography={THEMES.seaside.typography}
-                icons={THEMES.seaside.icons}
-                pressedOpacity={0.4}
-                itemLabelSingleLine
-              />
-            </View>
+              {/* Ambient */}
+              <View style={[styles.variant, { backgroundColor: THEMES.ambient.bg }]}>
+                <Text style={[styles.variantTitle, { color: THEMES.ambient.titleColor }]}>Ambient</Text>
+                <View style={{ height: 12 }} />
+                <ReactNativeSelect
+                  options={LOREM_IPSUM_OPTIONS}
+                  value={v11}
+                  onChange={(item) => setV11(item.value)}
+                  placeholder="Select…"
+                  searchable
+                  clearable
+                  colors={THEMES.ambient.selectColors}
+                  sizes={THEMES.ambient.sizes}
+                />
+              </View>
 
-            {/* Menu */}
-            <View style={[styles.variant, { backgroundColor: THEMES.menu.bg }]}>
-              <Text style={[styles.variantTitle, { color: THEMES.menu.titleColor }]}>Menu (custom group header)</Text>
-              <View style={{ height: 12 }} />
-              <ReactNativeSelect
-                options={flattenGroupedOptions(FRUITS_AND_VEGGIES_NESTED)}
-                value={v21}
-                onChange={(item) => setV21(item.value)}
-                placeholder="— Select from the menu —"
-                searchable
-                clearable
-                colors={THEMES.menu.selectColors}
-                sizes={THEMES.menu.sizes}
-                typography={THEMES.menu.typography}
-                icons={THEMES.menu.icons}
-                pressedOpacity={0.4}
-                hideDivider={true}
-                hideItemSeparator={true}
-                renderGroupHeader={({ item }) => (
-                  <View style={styles.customGroupHeader}>
-                    <View style={styles.customGroupHeaderLine} />
-                    <Text style={styles.customGroupHeaderText}>{item.label.toUpperCase()}</Text>
-                    <View style={styles.customGroupHeaderLine} />
-                  </View>
-                )}
-              />
-            </View>
+              {/* Emerald */}
+              <View style={[styles.variant, { backgroundColor: THEMES.emerald.bg }]}>
+                <Text style={[styles.variantTitle, { color: THEMES.emerald.titleColor }]}>Emerald</Text>
+                <View style={{ height: 12 }} />
+                <ReactNativeSelect
+                  options={LOREM_IPSUM_OPTIONS}
+                  value={v12}
+                  onChange={(item) => setV12(item.value)}
+                  placeholder="Select…"
+                  searchable
+                  clearable
+                  colors={THEMES.emerald.selectColors}
+                  sizes={THEMES.emerald.sizes}
+                />
+              </View>
 
-            {/* Candy */}
-            <View style={[styles.variant, { backgroundColor: THEMES.candy.bg }]}>
-              <Text style={[styles.variantTitle, { color: THEMES.candy.titleColor }]}>Candy</Text>
-              <View style={{ height: 12 }} />
-              <ReactNativeSelect
-                options={LOREM_IPSUM_OPTIONS}
-                value={v22}
-                onChange={(item) => setV22(item.value)}
-                placeholder="Pick something sweet…"
-                searchable
-                clearable
-                colors={THEMES.candy.selectColors}
-                sizes={THEMES.candy.sizes}
-                typography={THEMES.candy.typography}
-                icons={THEMES.candy.icons}
-                pressedOpacity={0.7}
-                hideDivider={true}
-                hideItemSeparator={false}
-              />
-            </View>
+              {/* Ocean */}
+              <View style={[styles.variant, { backgroundColor: THEMES.ocean.bg }]}>
+                <Text style={[styles.variantTitle, { color: THEMES.ocean.titleColor }]}>Ocean</Text>
+                <View style={{ height: 12 }} />
+                <ReactNativeSelect
+                  options={LOREM_IPSUM_OPTIONS}
+                  value={v13}
+                  onChange={(item) => setV13(item.value)}
+                  placeholder="Select…"
+                  searchable
+                  clearable
+                  colors={THEMES.ocean.selectColors}
+                  sizes={THEMES.ocean.sizes}
+                />
+              </View>
 
-            {/* Sunset */}
-            <View style={[styles.variant, { backgroundColor: THEMES.sunset.bg }]}>
-              <Text style={[styles.variantTitle, { color: THEMES.sunset.titleColor }]}>Sunset</Text>
-              <View style={{ height: 12 }} />
-              <ReactNativeSelect
-                options={LOREM_IPSUM_OPTIONS}
-                value={v23}
-                onChange={(item) => setV23(item.value)}
-                placeholder="Choose your destination…"
-                searchable
-                clearable
-                colors={THEMES.sunset.selectColors}
-                sizes={THEMES.sunset.sizes}
-                typography={THEMES.sunset.typography}
-                icons={THEMES.sunset.icons}
-                pressedOpacity={0.6}
-              />
-            </View>
+              {/* Midnight */}
+              <View style={[styles.variant, { backgroundColor: THEMES.midnight.bg }]}>
+                <Text style={[styles.variantTitle, { color: THEMES.midnight.titleColor }]}>Midnight</Text>
+                <View style={{ height: 12 }} />
+                <ReactNativeSelect
+                  options={LOREM_IPSUM_OPTIONS}
+                  value={v14}
+                  onChange={(item) => setV14(item.value)}
+                  placeholder="Select…"
+                  searchable
+                  clearable
+                  colors={THEMES.midnight.selectColors}
+                  sizes={THEMES.midnight.sizes}
+                />
+              </View>
+            </>
+          )}
 
-            {/* Terminal */}
-            <View style={[styles.variant, { backgroundColor: THEMES.terminal.bg }]}>
-              <Text style={[styles.variantTitle, { color: THEMES.terminal.titleColor }]}>Terminal</Text>
-              <View style={{ height: 12 }} />
-              <ReactNativeSelect
-                options={LOREM_IPSUM_OPTIONS}
-                value={v24}
-                onChange={(item) => setV24(item.value)}
-                placeholder="> type_"
-                searchable
-                clearable
-                colors={THEMES.terminal.selectColors}
-                sizes={THEMES.terminal.sizes}
-                typography={THEMES.terminal.typography}
-                icons={THEMES.terminal.icons}
-                pressedOpacity={0.3}
-              />
-            </View>
-          </>
-        )}
+          {page === 3 && (
+            <>
+              {/* Seaside */}
+              <View style={[styles.variant, { backgroundColor: THEMES.seaside.bg }]}>
+                <Text style={[styles.variantTitle, { color: THEMES.seaside.titleColor }]}>Seaside</Text>
+                <View style={{ height: 12 }} />
+                <ReactNativeSelect
+                  options={LOREM_IPSUM_OPTIONS}
+                  value={v20}
+                  onChange={(item) => setV20(item.value)}
+                  placeholder="Choose a sea breeze…"
+                  searchable
+                  clearable
+                  colors={THEMES.seaside.selectColors}
+                  sizes={THEMES.seaside.sizes}
+                  typography={THEMES.seaside.typography}
+                  icons={THEMES.seaside.icons}
+                  pressedOpacity={0.4}
+                  itemLabelSingleLine
+                />
+              </View>
 
-        {page === 4 && (
-          <>
-            {/* Highlight */}
-            <View style={[styles.variant, { backgroundColor: THEMES.mint.bg }]}>
-              <Text style={[styles.variantTitle, { color: THEMES.mint.titleColor }]}>Highlight</Text>
-              <View style={{ height: 12 }} />
-              <ReactNativeSelect
-                options={LOREM_IPSUM_OPTIONS}
-                value={v30}
-                onChange={(item) => setV30(item.value)}
-                placeholder="Choose something..."
-                searchable
-                renderTrigger={({ onPress, onClear, hasValue, selectedLabel }) => (
-                  <Pressable
-                    onPress={onPress}
-                    style={({ pressed }) => ({
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                      borderWidth: 1.5,
-                      borderColor: hasValue ? '#10B981' : '#D1FAE5',
-                      borderRadius: 20,
-                      paddingHorizontal: 16,
-                      height: 52,
-                      backgroundColor: '#FFFFFF',
-                      opacity: pressed ? 0.75 : 1,
-                      shadowColor: '#065F46',
-                      shadowOpacity: 0.08,
-                      shadowRadius: 6,
-                      elevation: 2,
-                    })}
-                  >
-                    {/* Left icon */}
-                    <Icon.Ionicons
-                      name="leaf"
-                      size={18}
-                      color={hasValue ? '#10B981' : '#9CA3AF'}
-                      style={{ marginRight: 12 }}
-                    />
+              {/* Menu */}
+              <View style={[styles.variant, { backgroundColor: THEMES.menu.bg }]}>
+                <Text style={[styles.variantTitle, { color: THEMES.menu.titleColor }]}>Menu (custom group header)</Text>
+                <View style={{ height: 12 }} />
+                <ReactNativeSelect
+                  options={flattenGroupedOptions(FRUITS_AND_VEGGIES_NESTED)}
+                  value={v21}
+                  onChange={(item) => setV21(item.value)}
+                  placeholder="— Select from the menu —"
+                  searchable
+                  clearable
+                  colors={THEMES.menu.selectColors}
+                  sizes={THEMES.menu.sizes}
+                  typography={THEMES.menu.typography}
+                  icons={THEMES.menu.icons}
+                  pressedOpacity={0.4}
+                  hideDivider={true}
+                  hideItemSeparator={true}
+                  renderGroupHeader={({ item }) => (
+                    <View style={styles.customGroupHeader}>
+                      <View style={styles.customGroupHeaderLine} />
+                      <Text style={styles.customGroupHeaderText}>{item.label.toUpperCase()}</Text>
+                      <View style={styles.customGroupHeaderLine} />
+                    </View>
+                  )}
+                />
+              </View>
 
-                    {/* Label */}
-                    <View style={{ flex: 1 }}>
+              {/* Candy */}
+              <View style={[styles.variant, { backgroundColor: THEMES.candy.bg }]}>
+                <Text style={[styles.variantTitle, { color: THEMES.candy.titleColor }]}>Candy</Text>
+                <View style={{ height: 12 }} />
+                <ReactNativeSelect
+                  options={LOREM_IPSUM_OPTIONS}
+                  value={v22}
+                  onChange={(item) => setV22(item.value)}
+                  placeholder="Pick something sweet…"
+                  searchable
+                  clearable
+                  colors={THEMES.candy.selectColors}
+                  sizes={THEMES.candy.sizes}
+                  typography={THEMES.candy.typography}
+                  icons={THEMES.candy.icons}
+                  pressedOpacity={0.7}
+                  hideDivider={true}
+                  hideItemSeparator={false}
+                />
+              </View>
+
+              {/* Sunset */}
+              <View style={[styles.variant, { backgroundColor: THEMES.sunset.bg }]}>
+                <Text style={[styles.variantTitle, { color: THEMES.sunset.titleColor }]}>Sunset</Text>
+                <View style={{ height: 12 }} />
+                <ReactNativeSelect
+                  options={LOREM_IPSUM_OPTIONS}
+                  value={v23}
+                  onChange={(item) => setV23(item.value)}
+                  placeholder="Choose your destination…"
+                  searchable
+                  clearable
+                  colors={THEMES.sunset.selectColors}
+                  sizes={THEMES.sunset.sizes}
+                  typography={THEMES.sunset.typography}
+                  icons={THEMES.sunset.icons}
+                  pressedOpacity={0.6}
+                />
+              </View>
+
+              {/* Terminal */}
+              <View style={[styles.variant, { backgroundColor: THEMES.terminal.bg }]}>
+                <Text style={[styles.variantTitle, { color: THEMES.terminal.titleColor }]}>Terminal</Text>
+                <View style={{ height: 12 }} />
+                <ReactNativeSelect
+                  options={LOREM_IPSUM_OPTIONS}
+                  value={v24}
+                  onChange={(item) => setV24(item.value)}
+                  placeholder="> type_"
+                  searchable
+                  clearable
+                  colors={THEMES.terminal.selectColors}
+                  sizes={THEMES.terminal.sizes}
+                  typography={THEMES.terminal.typography}
+                  icons={THEMES.terminal.icons}
+                  pressedOpacity={0.3}
+                />
+              </View>
+            </>
+          )}
+
+          {page === 4 && (
+            <>
+              {/* Highlight */}
+              <View style={[styles.variant, { backgroundColor: THEMES.mint.bg }]}>
+                <Text style={[styles.variantTitle, { color: THEMES.mint.titleColor }]}>Highlight</Text>
+                <View style={{ height: 12 }} />
+                <ReactNativeSelect
+                  options={LOREM_IPSUM_OPTIONS}
+                  value={v30}
+                  onChange={(item) => setV30(item.value)}
+                  placeholder="Choose something..."
+                  searchable
+                  renderTrigger={({ onPress, onClear, hasValue, selectedLabel }) => (
+                    <Pressable
+                      onPress={onPress}
+                      style={({ pressed }) => ({
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        borderWidth: 1.5,
+                        borderColor: hasValue ? '#10B981' : '#D1FAE5',
+                        borderRadius: 20,
+                        paddingHorizontal: 16,
+                        height: 52,
+                        backgroundColor: '#FFFFFF',
+                        opacity: pressed ? 0.75 : 1,
+                        shadowColor: '#065F46',
+                        shadowOpacity: 0.08,
+                        shadowRadius: 6,
+                        elevation: 2,
+                      })}
+                    >
+                      {/* Left icon */}
+                      <Ionicons
+                        name="leaf"
+                        size={18}
+                        color={hasValue ? '#10B981' : '#9CA3AF'}
+                        style={{ marginRight: 12 }}
+                      />
+
+                      {/* Label */}
+                      <View style={{ flex: 1 }}>
+                        <Text
+                          numberOfLines={1}
+                          style={{
+                            fontSize: 15,
+                            color: hasValue ? '#022C22' : '#9CA3AF',
+                          }}
+                        >
+                          {selectedLabel}
+                        </Text>
+                      </View>
+
+                      {/* Clear button */}
+                      {hasValue && (
+                        <Pressable
+                          onPress={(e) => {
+                            // e.stopPropagation(); // Should work without - use eventually to prevent the clear button from being pressed when the trigger is pressed.
+                            onClear();
+                          }}
+                          style={({ pressed }) => ({
+                            padding: 6,
+                            borderRadius: 999,
+                            backgroundColor: pressed ? '#D1FAE5' : 'transparent',
+                          })}
+                        >
+                          <Ionicons name="close" size={22} color="#10B981" />
+                        </Pressable>
+                      )}
+                    </Pressable>
+                  )}
+                />
+              </View>
+
+              {/* Underline */}
+              <View style={[styles.variant, { backgroundColor: THEMES.underline.bg }]}>
+                <Text style={[styles.variantTitle, { color: THEMES.underline.titleColor }]}>Underline</Text>
+                <View style={{ height: 12 }} />
+                <ReactNativeSelect
+                  options={LOREM_IPSUM_OPTIONS} value={v31}
+                  onChange={(item) => setV31(item.value)}
+                  placeholder="Select option…" searchable clearable
+                  pressedOpacity={0.4}
+                  renderTrigger={({ onPress, onClear, hasValue, selectedLabel }) => (
+                    <Pressable
+                      onPress={onPress}
+                      style={({ pressed }) => ({
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        paddingHorizontal: 4,
+                        paddingBottom: 10,
+                        opacity: pressed ? 0.5 : 1,
+                        borderBottomWidth: 2,
+                        borderBottomColor: hasValue ? '#F97316' : '#FED7AA',
+                      })}
+                    >
+                      <Ionicons
+                        name="pricetag-outline"
+                        size={16}
+                        color={hasValue ? '#F97316' : '#FDBA74'}
+                        style={{ marginRight: 8 }}
+                      />
                       <Text
                         numberOfLines={1}
                         style={{
-                          fontSize: 15,
-                          color: hasValue ? '#022C22' : '#9CA3AF',
+                          flex: 1,
+                          fontSize: 16,
+                          color: hasValue ? '#431407' : '#9CA3AF',
+                          letterSpacing: 0.2,
                         }}
                       >
                         {selectedLabel}
                       </Text>
-                    </View>
+                      {hasValue ? (
+                        <Pressable
+                          onPress={(e) => { e.stopPropagation(); onClear(); }}
+                          hitSlop={8}
+                        >
+                          <Ionicons name="close" size={16} color="#F97316" />
+                        </Pressable>
+                      ) : (
+                        <Ionicons name="chevron-down" size={16} color="#FDBA74" />
+                      )}
+                    </Pressable>
+                  )}
+                />
+              </View>
 
-                    {/* Clear button */}
-                    {hasValue && (
-                      <Pressable
-                        onPress={(e) => {
-                          // e.stopPropagation(); // Should work without - use eventually to prevent the clear button from being pressed when the trigger is pressed.
-                          onClear();
-                        }}
-                        style={({ pressed }) => ({
-                          padding: 6,
-                          borderRadius: 999,
-                          backgroundColor: pressed ? '#D1FAE5' : 'transparent',
-                        })}
-                      >
-                        <Icon.Ionicons name="close" size={22} color="#10B981" />
-                      </Pressable>
-                    )}
-                  </Pressable>
-                )}
-              />
-            </View>
-
-            {/* Underline */}
-            <View style={[styles.variant, { backgroundColor: THEMES.underline.bg }]}>
-              <Text style={[styles.variantTitle, { color: THEMES.underline.titleColor }]}>Underline</Text>
-              <View style={{ height: 12 }} />
-              <ReactNativeSelect
-                options={LOREM_IPSUM_OPTIONS} value={v31}
-                onChange={(item) => setV31(item.value)}
-                placeholder="Select option…" searchable clearable
-                pressedOpacity={0.4}
-                renderTrigger={({ onPress, onClear, hasValue, selectedLabel }) => (
-                  <Pressable
-                    onPress={onPress}
-                    style={({ pressed }) => ({
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                      paddingHorizontal: 4,
-                      paddingBottom: 10,
-                      opacity: pressed ? 0.5 : 1,
-                      borderBottomWidth: 2,
-                      borderBottomColor: hasValue ? '#F97316' : '#FED7AA',
-                    })}
-                  >
-                    <Icon.Ionicons
-                      name="pricetag-outline"
-                      size={16}
-                      color={hasValue ? '#F97316' : '#FDBA74'}
-                      style={{ marginRight: 8 }}
-                    />
-                    <Text
-                      numberOfLines={1}
-                      style={{
-                        flex: 1,
-                        fontSize: 16,
-                        color: hasValue ? '#431407' : '#9CA3AF',
-                        letterSpacing: 0.2,
-                      }}
-                    >
-                      {selectedLabel}
-                    </Text>
-                    {hasValue ? (
-                      <Pressable
-                        onPress={(e) => { e.stopPropagation(); onClear(); }}
-                        hitSlop={8}
-                      >
-                        <Icon.Ionicons name="close" size={16} color="#F97316" />
-                      </Pressable>
-                    ) : (
-                      <Icon.Ionicons name="chevron-down" size={16} color="#FDBA74" />
-                    )}
-                  </Pressable>
-                )}
-              />
-            </View>
-
-            {/* Filled */}
-            <View style={[styles.variant, { backgroundColor: THEMES.filled.bg }]}>
-              <Text style={[styles.variantTitle, { color: THEMES.filled.titleColor }]}>Filled</Text>
-              <View style={{ height: 12 }} />
-              <ReactNativeSelect
-                options={LOREM_IPSUM_OPTIONS} value={v32}
-                onChange={(item) => setV32(item.value)}
-                placeholder="Pick something…" searchable clearable
-                pressedOpacity={0.6}
-                renderTrigger={({ onPress, onClear, hasValue, selectedLabel }) => (
-                  <Pressable
-                    onPress={onPress}
-                    style={({ pressed }) => ({
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                      borderRadius: 14,
-                      paddingLeft: 6,
-                      paddingRight: 12,
-                      height: 52,
-                      backgroundColor: pressed ? '#4338CA' : '#4F46E5',
-                      shadowColor: '#3730A3',
-                      shadowOffset: { width: 0, height: 4 },
-                      shadowOpacity: 0.35,
-                      shadowRadius: 10,
-                      elevation: 5,
-                    })}
-                  >
-                    {/* Colored circle icon */}
-                    <View style={{
-                      width: 36, height: 36, borderRadius: 10,
-                      backgroundColor: 'rgba(255,255,255,0.18)',
-                      justifyContent: 'center', alignItems: 'center',
-                      marginRight: 12,
-                    }}>
-                      <Icon.Ionicons
-                        name={hasValue ? 'checkmark' : 'list-outline'}
-                        size={18}
-                        color="#FFFFFF"
-                      />
-                    </View>
-                    <Text
-                      numberOfLines={1}
-                      style={{
-                        flex: 1,
-                        fontSize: 15,
-                        fontWeight: '600',
-                        color: hasValue ? '#FFFFFF' : '#A5B4FC',
-                        letterSpacing: 0.1,
-                      }}
-                    >
-                      {selectedLabel}
-                    </Text>
-                    {hasValue ? (
-                      <Pressable
-                        onPress={(e) => { e.stopPropagation(); onClear(); }}
-                        style={{
-                          width: 26, height: 26, borderRadius: 8,
-                          backgroundColor: 'rgba(255,255,255,0.2)',
-                          justifyContent: 'center', alignItems: 'center',
-                          marginLeft: 8,
-                        }}
-                      >
-                        <Icon.Ionicons name="close" size={14} color="#C7D2FE" />
-                      </Pressable>
-                    ) : (
-                      <Icon.Ionicons name="chevron-expand" size={18} color="#A5B4FC" style={{ marginLeft: 6 }} />
-                    )}
-                  </Pressable>
-                )}
-              />
-            </View>
-
-            {/* Outlined */}
-            <View style={[styles.variant, { backgroundColor: THEMES.outlined.bg }]}>
-              <Text style={[styles.variantTitle, { color: THEMES.outlined.titleColor }]}>Outlined</Text>
-              <View style={{ height: 12 }} />
-              <ReactNativeSelect
-                options={LOREM_IPSUM_OPTIONS} value={v33}
-                onChange={(item) => setV33(item.value)}
-                placeholder="Choose…" searchable clearable
-                pressedOpacity={0.4}
-                renderTrigger={({ onPress, onClear, hasValue, selectedLabel }) => (
-                  <Pressable
-                    onPress={onPress}
-                    style={({ pressed }) => ({
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                      borderRadius: 999,
-                      paddingHorizontal: 18,
-                      height: 48,
-                      backgroundColor: pressed ? '#FDF4FF' : '#FFFFFF',
-                      borderWidth: 2,
-                      borderColor: hasValue ? '#D946EF' : '#E879F9',
-                      shadowColor: '#D946EF',
-                      shadowOffset: { width: 0, height: 0 },
-                      shadowOpacity: pressed ? 0.5 : 0.2,
-                      shadowRadius: 8,
-                      elevation: 3,
-                    })}
-                  >
-                    {hasValue ? (
-                      <View style={{
-                        backgroundColor: '#FAE8FF',
-                        borderRadius: 999,
-                        paddingHorizontal: 8,
-                        paddingVertical: 2,
-                        marginRight: 10,
+              {/* Filled */}
+              <View style={[styles.variant, { backgroundColor: THEMES.filled.bg }]}>
+                <Text style={[styles.variantTitle, { color: THEMES.filled.titleColor }]}>Filled</Text>
+                <View style={{ height: 12 }} />
+                <ReactNativeSelect
+                  options={LOREM_IPSUM_OPTIONS} value={v32}
+                  onChange={(item) => setV32(item.value)}
+                  placeholder="Pick something…" searchable clearable
+                  pressedOpacity={0.6}
+                  renderTrigger={({ onPress, onClear, hasValue, selectedLabel }) => (
+                    <Pressable
+                      onPress={onPress}
+                      style={({ pressed }) => ({
                         flexDirection: 'row',
                         alignItems: 'center',
-                        gap: 4,
+                        borderRadius: 14,
+                        paddingLeft: 6,
+                        paddingRight: 12,
+                        height: 52,
+                        backgroundColor: pressed ? '#4338CA' : '#4F46E5',
+                        shadowColor: '#3730A3',
+                        shadowOffset: { width: 0, height: 4 },
+                        shadowOpacity: 0.35,
+                        shadowRadius: 10,
+                        elevation: 5,
+                      })}
+                    >
+                      {/* Colored circle icon */}
+                      <View style={{
+                        width: 36, height: 36, borderRadius: 10,
+                        backgroundColor: 'rgba(255,255,255,0.18)',
+                        justifyContent: 'center', alignItems: 'center',
+                        marginRight: 12,
                       }}>
-                        <View style={{ width: 6, height: 6, borderRadius: 3, backgroundColor: '#D946EF' }} />
-                        <Text style={{ fontSize: 11, color: '#86198F', fontWeight: '700' }}>1</Text>
+                        <Ionicons
+                          name={hasValue ? 'checkmark' : 'list-outline'}
+                          size={18}
+                          color="#FFFFFF"
+                        />
                       </View>
-                    ) : (
-                      <Icon.Ionicons
-                        name="options-outline"
-                        size={16}
-                        color="#E879F9"
-                        style={{ marginRight: 10 }}
-                      />
-                    )}
-                    <Text
-                      numberOfLines={1}
-                      style={{
-                        flex: 1,
-                        fontSize: 15,
-                        color: hasValue ? '#4A044E' : '#A855F7',
-                        fontWeight: hasValue ? '600' : '400',
-                      }}
-                    >
-                      {selectedLabel}
-                    </Text>
-                    {hasValue ? (
-                      <Pressable
-                        onPress={(e) => { e.stopPropagation(); onClear(); }}
+                      <Text
+                        numberOfLines={1}
                         style={{
-                          marginLeft: 8,
-                          padding: 4,
-                          borderRadius: 999,
+                          flex: 1,
+                          fontSize: 15,
+                          fontWeight: '600',
+                          color: hasValue ? '#FFFFFF' : '#A5B4FC',
+                          letterSpacing: 0.1,
+                        }}
+                      >
+                        {selectedLabel}
+                      </Text>
+                      {hasValue ? (
+                        <Pressable
+                          onPress={(e) => { e.stopPropagation(); onClear(); }}
+                          style={{
+                            width: 26, height: 26, borderRadius: 8,
+                            backgroundColor: 'rgba(255,255,255,0.2)',
+                            justifyContent: 'center', alignItems: 'center',
+                            marginLeft: 8,
+                          }}
+                        >
+                          <Ionicons name="close" size={14} color="#C7D2FE" />
+                        </Pressable>
+                      ) : (
+                        <Ionicons name="chevron-expand" size={18} color="#A5B4FC" style={{ marginLeft: 6 }} />
+                      )}
+                    </Pressable>
+                  )}
+                />
+              </View>
+
+              {/* Outlined */}
+              <View style={[styles.variant, { backgroundColor: THEMES.outlined.bg }]}>
+                <Text style={[styles.variantTitle, { color: THEMES.outlined.titleColor }]}>Outlined</Text>
+                <View style={{ height: 12 }} />
+                <ReactNativeSelect
+                  options={LOREM_IPSUM_OPTIONS} value={v33}
+                  onChange={(item) => setV33(item.value)}
+                  placeholder="Choose…" searchable clearable
+                  pressedOpacity={0.4}
+                  renderTrigger={({ onPress, onClear, hasValue, selectedLabel }) => (
+                    <Pressable
+                      onPress={onPress}
+                      style={({ pressed }) => ({
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        borderRadius: 999,
+                        paddingHorizontal: 18,
+                        height: 48,
+                        backgroundColor: pressed ? '#FDF4FF' : '#FFFFFF',
+                        borderWidth: 2,
+                        borderColor: hasValue ? '#D946EF' : '#E879F9',
+                        shadowColor: '#D946EF',
+                        shadowOffset: { width: 0, height: 0 },
+                        shadowOpacity: pressed ? 0.5 : 0.2,
+                        shadowRadius: 8,
+                        elevation: 3,
+                      })}
+                    >
+                      {hasValue ? (
+                        <View style={{
                           backgroundColor: '#FAE8FF',
-                        }}
-                      >
-                        <Icon.Ionicons name="close" size={14} color="#D946EF" />
-                      </Pressable>
-                    ) : (
-                      <Icon.Ionicons name="chevron-down" size={16} color="#E879F9" style={{ marginLeft: 6 }} />
-                    )}
-                  </Pressable>
-                )}
-              />
-            </View>
-
-            {/* Glass */}
-            <View style={[styles.variant, { backgroundColor: THEMES.glass.bg }]}>
-              <Text style={[styles.variantTitle, { color: THEMES.glass.titleColor }]}>Glass</Text>
-              <View style={{ height: 12 }} />
-              <ReactNativeSelect
-                options={LOREM_IPSUM_OPTIONS} value={v34}
-                onChange={(item) => setV34(item.value)}
-                placeholder="Explore…" searchable clearable
-                pressedOpacity={0.5}
-                renderTrigger={({ onPress, onClear, hasValue, selectedLabel }) => (
-                  <Pressable
-                    onPress={onPress}
-                    style={({ pressed }) => ({
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                      borderRadius: 22,
-                      height: 54,
-                      overflow: 'hidden',
-                      backgroundColor: pressed
-                        ? 'rgb(181, 239, 232)'
-                        : 'rgb(217, 251, 246)',
-                      borderWidth: 1,
-                      borderColor: 'rgba(20,184,166,0.4)',
-                      shadowColor: '#0F766E',
-                      shadowOffset: { width: 0, height: 4 },
-                      shadowOpacity: 0.15,
-                      shadowRadius: 12,
-                      elevation: 4,
-                    })}
-                  >
-                    {/* Accent bar on the left */}
-                    <View style={{
-                      width: 4,
-                      alignSelf: 'stretch',
-                      backgroundColor: hasValue ? '#14B8A6' : 'rgba(20,184,166,0.3)',
-                      borderTopLeftRadius: 22,
-                      borderBottomLeftRadius: 22,
-                    }} />
-                    <Icon.Ionicons
-                      name="diamond-outline"
-                      size={17}
-                      color={hasValue ? '#0F766E' : '#5EEAD4'}
-                      style={{ marginHorizontal: 12 }}
-                    />
-                    <Text
-                      numberOfLines={1}
-                      style={{
-                        flex: 1,
-                        fontSize: 15,
-                        color: hasValue ? '#042F2E' : '#5EEAD4',
-                        fontStyle: hasValue ? 'normal' : 'italic',
-                      }}
-                    >
-                      {selectedLabel}
-                    </Text>
-                    {hasValue ? (
-                      <Pressable
-                        onPress={(e) => { e.stopPropagation(); onClear(); }}
+                          borderRadius: 999,
+                          paddingHorizontal: 8,
+                          paddingVertical: 2,
+                          marginRight: 10,
+                          flexDirection: 'row',
+                          alignItems: 'center',
+                          gap: 4,
+                        }}>
+                          <View style={{ width: 6, height: 6, borderRadius: 3, backgroundColor: '#D946EF' }} />
+                          <Text style={{ fontSize: 11, color: '#86198F', fontWeight: '700' }}>1</Text>
+                        </View>
+                      ) : (
+                        <Ionicons
+                          name="options-outline"
+                          size={16}
+                          color="#E879F9"
+                          style={{ marginRight: 10 }}
+                        />
+                      )}
+                      <Text
+                        numberOfLines={1}
                         style={{
-                          marginRight: 14,
-                          width: 24, height: 24, borderRadius: 8,
-                          backgroundColor: 'rgba(20,184,166,0.15)',
-                          justifyContent: 'center', alignItems: 'center',
+                          flex: 1,
+                          fontSize: 15,
+                          color: hasValue ? '#4A044E' : '#A855F7',
+                          fontWeight: hasValue ? '600' : '400',
                         }}
                       >
-                        <Icon.Ionicons name="close" size={14} color="#0D9488" />
-                      </Pressable>
-                    ) : (
-                      <Icon.Ionicons
-                        name="chevron-down"
-                        size={16}
-                        color="#5EEAD4"
-                        style={{ marginRight: 16 }}
-                      />
-                    )}
-                  </Pressable>
-                )}
-              />
-            </View>
-          </>
-        )}
+                        {selectedLabel}
+                      </Text>
+                      {hasValue ? (
+                        <Pressable
+                          onPress={(e) => { e.stopPropagation(); onClear(); }}
+                          style={{
+                            marginLeft: 8,
+                            padding: 4,
+                            borderRadius: 999,
+                            backgroundColor: '#FAE8FF',
+                          }}
+                        >
+                          <Ionicons name="close" size={14} color="#D946EF" />
+                        </Pressable>
+                      ) : (
+                        <Ionicons name="chevron-down" size={16} color="#E879F9" style={{ marginLeft: 6 }} />
+                      )}
+                    </Pressable>
+                  )}
+                />
+              </View>
 
-      </View>
-    </ScrollView >
+              {/* Glass */}
+              <View style={[styles.variant, { backgroundColor: THEMES.glass.bg }]}>
+                <Text style={[styles.variantTitle, { color: THEMES.glass.titleColor }]}>Glass</Text>
+                <View style={{ height: 12 }} />
+                <ReactNativeSelect
+                  options={LOREM_IPSUM_OPTIONS} value={v34}
+                  onChange={(item) => setV34(item.value)}
+                  placeholder="Explore…" searchable clearable
+                  pressedOpacity={0.5}
+                  renderTrigger={({ onPress, onClear, hasValue, selectedLabel }) => (
+                    <Pressable
+                      onPress={onPress}
+                      style={({ pressed }) => ({
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        borderRadius: 22,
+                        height: 54,
+                        overflow: 'hidden',
+                        backgroundColor: pressed
+                          ? 'rgb(181, 239, 232)'
+                          : 'rgb(217, 251, 246)',
+                        borderWidth: 1,
+                        borderColor: 'rgba(20,184,166,0.4)',
+                        shadowColor: '#0F766E',
+                        shadowOffset: { width: 0, height: 4 },
+                        shadowOpacity: 0.15,
+                        shadowRadius: 12,
+                        elevation: 4,
+                      })}
+                    >
+                      {/* Accent bar on the left */}
+                      <View style={{
+                        width: 4,
+                        alignSelf: 'stretch',
+                        backgroundColor: hasValue ? '#14B8A6' : 'rgba(20,184,166,0.3)',
+                        borderTopLeftRadius: 22,
+                        borderBottomLeftRadius: 22,
+                      }} />
+                      <Ionicons
+                        name="diamond-outline"
+                        size={17}
+                        color={hasValue ? '#0F766E' : '#5EEAD4'}
+                        style={{ marginHorizontal: 12 }}
+                      />
+                      <Text
+                        numberOfLines={1}
+                        style={{
+                          flex: 1,
+                          fontSize: 15,
+                          color: hasValue ? '#042F2E' : '#5EEAD4',
+                          fontStyle: hasValue ? 'normal' : 'italic',
+                        }}
+                      >
+                        {selectedLabel}
+                      </Text>
+                      {hasValue ? (
+                        <Pressable
+                          onPress={(e) => { e.stopPropagation(); onClear(); }}
+                          style={{
+                            marginRight: 14,
+                            width: 24, height: 24, borderRadius: 8,
+                            backgroundColor: 'rgba(20,184,166,0.15)',
+                            justifyContent: 'center', alignItems: 'center',
+                          }}
+                        >
+                          <Ionicons name="close" size={14} color="#0D9488" />
+                        </Pressable>
+                      ) : (
+                        <Ionicons
+                          name="chevron-down"
+                          size={16}
+                          color="#5EEAD4"
+                          style={{ marginRight: 16 }}
+                        />
+                      )}
+                    </Pressable>
+                  )}
+                />
+              </View>
+            </>
+          )}
+
+        </View>
+      </ScrollView>
+    </SafeAreaProvider>
   );
 }
 
