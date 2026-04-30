@@ -1,6 +1,6 @@
 {
   "name": "@tenkaipl/react-native-select",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Customizable select/dropdown for React Native",
   "main": "src/index.js",
   "files": [
